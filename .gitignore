@@ -8,6 +8,7 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+.vs/
 
 ipch/
 *.aps

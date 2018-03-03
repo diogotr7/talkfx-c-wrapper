@@ -18,7 +18,7 @@ extern "C" {
   __declspec(dllexport) void set_LED_off(CROCCAT_Talk* handle, BYTE ucPos);
 	
 	/* send a whole array as a frame to the keyboard (manipulate mulitple LEDS)*/
-  __declspec(dllexport) void Set_all_LEDS(CROCCAT_Talk* handle, BYTE *ucLED);
+  __declspec(dllexport) void Set_all_LEDS(CROCCAT_Talk* handle, BYTE *ucLED, BYTE layout = TALKFX_RYOS_LAYOUT_DE);
 	
 	/* simple blinking effect on Ryos MK PRO */
   __declspec(dllexport) void All_Key_Blinking(CROCCAT_Talk* handle, int DelayTime, int LoopTimes);
@@ -28,4 +28,12 @@ extern "C" {
 	
 	/* TALK FX method -- restore user LED colour at end of program */
   __declspec(dllexport) void RestoreLEDRGB(CROCCAT_Talk* handle);
+
+    /* TALK FX method -- Ryos MK FX specific*/
+  __declspec(dllexport) void Set_all_LEDSFX(CROCCAT_Talk* handle, BYTE *ucLEDOnOff, BYTE *ucLEDRGB, BYTE layout = TALKFX_RYOS_LAYOUT_DE);
+
+  __declspec(dllexport) void Set_all_LEDSFX_struct(CROCCAT_Talk* handle, BYTE *ucLEDOnOff, struct rgbstruct *strctLEDRGB, BYTE layout = TALKFX_RYOS_LAYOUT_DE);
+
+  __declspec(dllexport) void Set_all_LEDSFX_individual(CROCCAT_Talk* handle, BYTE *ucLEDOnOff, BYTE *ucLEDRed, BYTE *ucLEDGreen, BYTE *ucLEDBlue, BYTE layout = TALKFX_RYOS_LAYOUT_DE);
+
 }

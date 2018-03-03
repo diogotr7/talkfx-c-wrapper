@@ -36,8 +36,8 @@ void set_LED_off(CROCCAT_Talk* handle, BYTE ucPos) {
   handle->set_LED_off(ucPos);
 }
 
-void Set_all_LEDS(CROCCAT_Talk* handle, BYTE *ucLED) {
-  handle->Set_all_LEDS(ucLED);
+void Set_all_LEDS(CROCCAT_Talk* handle, BYTE *ucLED, BYTE layout) {
+  handle->Set_all_LEDS(ucLED, layout);
 }
 
 void All_Key_Blinking(CROCCAT_Talk* handle, int DelayTime, int LoopTimes) {
@@ -50,4 +50,16 @@ void Set_LED_RGB(CROCCAT_Talk* handle, BYTE bZone, BYTE bEffect, BYTE bSpeed, BY
 
 void RestoreLEDRGB(CROCCAT_Talk* handle) {
   handle->RestoreLEDRGB();
+}
+
+void Set_all_LEDSFX(CROCCAT_Talk* handle, BYTE *ucLEDOnOff, BYTE *ucLEDRGB, BYTE layout) {
+	handle->Set_all_LEDSFX(ucLEDOnOff, ucLEDRGB, layout);
+}
+
+void Set_all_LEDSFX_struct(CROCCAT_Talk* handle, BYTE *ucLEDOnOff, struct rgbstruct *strctLEDRGB, BYTE layout) {
+	handle->Set_all_LEDSFX(ucLEDOnOff, strctLEDRGB, layout);
+}
+
+void Set_all_LEDSFX_individual(CROCCAT_Talk* handle, BYTE *ucLEDOnOff, BYTE *ucLEDRed, BYTE *ucLEDGreen, BYTE *ucLEDBlue, BYTE layout) {
+	handle->Set_all_LEDSFX(ucLEDOnOff, ucLEDRed, ucLEDGreen, ucLEDBlue, layout);
 }
